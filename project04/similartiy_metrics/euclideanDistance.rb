@@ -11,6 +11,7 @@ def euclidean_distance(this,that)
       sum += (x - that[index])**2
     end
     distance = Math.sqrt(sum)
+    1 / (1 + distance)
   else
     puts "Arrays of differing length provided"
     return nil
