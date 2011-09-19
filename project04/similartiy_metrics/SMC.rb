@@ -2,7 +2,7 @@
 # Distance between binary attributes counting presence and absence
 
 def smc(this,that)
-    # make sure that the arrays are same length (same # of attributes)
+  # make sure that the arrays are same length (same # of attributes)
   if this.length == that.length
     number_of_matches = 0
     this.each_with_index do |x, index|
