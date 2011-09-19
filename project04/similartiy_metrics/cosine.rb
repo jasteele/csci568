@@ -10,7 +10,7 @@ def cosine(this,that)
     vector_length_x = sum1Sq**0.5
     vector_length_y = sum2Sq**0.5
     # Sum up the products
-    pSum=0
+    pSum=0.0
     this.each_with_index do |x,index|
       pSum += x * that[index]
     end
