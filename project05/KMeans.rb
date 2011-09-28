@@ -3,7 +3,8 @@ class KMeans
 
   def initialize(k)
     @k = k
-    @allpoints = []
+    @allPoints = []
+    @allClusters
   end
   
   def load(fileName)
@@ -12,7 +13,7 @@ class KMeans
     data.each_line("\n") do |row|
       columns = row.split(",")
       if columns.length == 5
-        @allpoints.push(Iris.new(columns[0],columns[1],columns[2],columns[3]))
+        @allPoints.push([columns[0],columns[1],columns[2],columns[3]])
       end
     end
   end   
@@ -24,27 +25,48 @@ class Cluster
   def initialize(location)
     @location = location
     @points = []
+    @distanceMoved = 10
   end
 
   def move!
+    a = b = c = d = 0
+    oldLocation = @location
+    @points.each do |iris|
+      a += iris[0]
+      b += iris[1]
+      c += iris[2]
+      d += iris[3]
+    end
 
+    a /= points.length
+    b /= points.length
+    c /= points.length
+    d /= points.length
+
+    @location = [a,b,c,d]
+    @distanceMoved = EuclideanDistance.euclideanDistance(oldLocation, @location)
   end
 end
 
-# class to hold the csv data from the file
-class Iris
-  attr_accessor :a, :b, :c, :d
-  
-  def initialize(a,b,c,d)
-    @a = a
-    @b = b
-    @c = c
-    @d = d
+
+# Euclidean distance function.
+# Returns the linear distance between two objects this and that, represented as
+# a floating point value between 0 and 1.
+# Passing in arrays of values
+module EuclideanDistance 
+  def EuclideanDistance.euclideanDistance(this,that)
+    # make sure that the arrays are same length (same # of attributes)
+    if this.length == that.length
+      sum = 0
+      # for each dimension calculate the distance between this and that
+      this.each_with_index do |x,index|
+        sum += (x - that[index])**2
+      end
+      distance = Math.sqrt(sum)
+      #1 / (1 + distance)
+    else
+      puts "Arrays of differing length provided"
+      return nil
+    end
   end
-
-  def to_s
-    puts "#{@a}, #{@b}, #{@c}, #{@d}"
-  end
-
-
 end
