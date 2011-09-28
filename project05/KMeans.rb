@@ -1,3 +1,4 @@
+#Jared Steele's KMeans implementation for the iris dataset
 class KMeans
   attr_accessor :k
 
@@ -5,20 +6,34 @@ class KMeans
     @k = k
     @allPoints = []
     @allClusters
+    @maxs = [0,0,0,0]
   end
   
+  def kmeans
+    # create K clusters
+    (1..@k).each do |i|
+      
+    end
+  end
+
+
   def load(fileName)
-    entries = []
     data = File.open(fileName, "r")
     data.each_line("\n") do |row|
       columns = row.split(",")
       if columns.length == 5
+        @maxs.each_with_index do |max,index|
+          if max < columns[index].to_f
+            @maxs[index] = columns[index].to_f
+          end
+        end
         @allPoints.push([columns[0],columns[1],columns[2],columns[3]])
       end
     end
   end   
 end
 
+#Cluster class is an object to represent each centroid and its cluster
 class Cluster
   attr_accessor :location, :points
   
