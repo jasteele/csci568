@@ -5,17 +5,49 @@ class KMeans
   def initialize(k)
     @k = k
     @allPoints = []
-    @allClusters
+    @allClusters = []
     @maxs = [0,0,0,0]
   end
   
   def kmeans
     # create K clusters
     (1..@k).each do |i|
-      
+      @allClusters.push(Cluster.new([rand(@maxs[0]),rand(@maxs[1]),rand(@maxs[1]),rand(@maxs[1])]))
     end
-  end
 
+    # assign each point to the nearest centroid (cluster)
+    @allPoints.each do |point|
+      closestCluster = nil
+      distanceToNearestCluster = 10000 #larger than the distance between any point will be
+
+      @allClusters.each do |cluster|
+        distance = point.EuclideanDistance.euclideanDistance(point,cluster.location)
+
+        if distance < distanceToNearestCluster
+          distanceToNearestCluster = dist
+          closestCluster = cluster
+        end
+      end
+
+      closestCluster.points.push(point)
+    end
+
+    #move the centroids and stop if they have barely moved
+    movement = 0.0
+    @allClusters.each do |cluster|
+      movement += cluster.move!
+      puts movement
+    end
+
+    if movement < .1
+      return @allClusters
+    end 
+
+    # clear the points in the cluster 
+    @allClusters.each do |cluster|
+      cluster.points = []
+    end  
+  end
 
   def load(fileName)
     data = File.open(fileName, "r")
