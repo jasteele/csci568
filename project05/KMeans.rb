@@ -9,6 +9,7 @@ class KMeans
     @maxs = [0,0,0,0]
   end
   
+  #the kmeans algorithim
   def kmeans
     # create K clusters
     (1..@k).each do |i|
@@ -37,11 +38,11 @@ class KMeans
       movement = 0.0
       @allClusters.each do |cluster|
         movement += cluster.move!
-        puts movement
       end
 
       if movement == 0.0
-        return @allClusters
+        output(@allClusters)
+        break
       end 
 
       # clear the points in the cluster 
@@ -50,7 +51,22 @@ class KMeans
       end  
     end
   end
+  # SSE function
+  def SSE(cluster)
+    sse = 0.0
+    cluster.points.each do |point|
+      sse += EuclideanDistance.euclideanDistance(point, cluster.location)**2
+    end
+    return sse
+  end
 
+  #function to output SSE and count of points in each cluster
+  def output(allClusters)
+    allClusters.each do |cluster|
+      puts "Cluster: # of members = #{cluster.points.length} SSE = #{SSE(cluster)}"
+    end
+  end
+  #load iris csv data
   def load(fileName)
     data = File.open(fileName, "r")
     data.each_line("\n") do |row|
