@@ -7,13 +7,14 @@ class KMeans
     @allPoints = []
     @allClusters = []
     @maxs = [0,0,0,0]
+    @mins = [100,100,100,100]
   end
   
   #the kmeans algorithim
   def kmeans
     # create K clusters
     (1..@k).each do |i|
-      @allClusters.push(Cluster.new([rand(@maxs[0]),rand(@maxs[1]),rand(@maxs[1]),rand(@maxs[1])]))
+      @allClusters.push(Cluster.new([rand(@maxs[0]-@mins[0])+@mins[0],rand(@maxs[1]-@mins[1])+@mins[1],rand(@maxs[2]-@mins[2])+@mins[2],rand(@maxs[3]-@mins[3])+@mins[3]]))
     end
     
     while true
@@ -75,6 +76,11 @@ class KMeans
         @maxs.each_with_index do |max,index|
           if max < columns[index].to_f
             @maxs[index] = columns[index].to_f
+          end
+        end
+        @mins.each_with_index do |min,index|
+          if min > columns[index].to_f
+            @mins[index] = columns[index].to_f
           end
         end
         @allPoints.push([columns[0].to_f, columns[1].to_f, columns[2].to_f, columns[3].to_f])
