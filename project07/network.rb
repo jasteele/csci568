@@ -19,18 +19,21 @@ class Network
 		@layers[0].neurons[0].value = @input[0]
 		@layers[0].neurons[1].value = @input[1]
 		@layers[0].neurons[2].value = @input[2]
+		connect_layers(@layers[0],@layers[1])
+		connect_layers(@layers[1],@layers[2])
 	end
-	# create arrows between nodes
+
+	# create arrows between neurons
 	def connect_layers(source, destination)
-		destination.neurons.each do |dest_n|
-			source.neurons.each do |src_n|
-				src_n.arrows.push(Arrow.new(src_n, dest_n))
+		source.neurons.each do |src_n|
+			destination.neurons.each do |dest_n|
+				Arrow.new(src_n, dest_n)
 			end
 		end
 	end
 
 	# run ANN
-	def feed_forward(layer)
+	def feed_forward
 
 	end
 end
