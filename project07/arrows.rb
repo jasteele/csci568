@@ -1,13 +1,13 @@
 class Arrow
-	attr_accessor :weight,:source, :destination
-	def inititalize (source, destination)
+	attr_accessor :weight, :destination
+	def initialize (source, destination)
 		#random between 0 and 1
 		@weight = rand
 		#randomly make some negative weights too
 		if (rand > 0.5)
 			@weight *= -1
 		end
-		@source = source
+		source.arrows.push(self)
 		@destination = destination
 	end
 end

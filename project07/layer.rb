@@ -4,9 +4,7 @@ class Layer
 		@forward_layer = forward_layer
 		@neurons = []
 		(0...numNeurons).each do |index|
-			@neurons[index] = Neuron.new
+			@neurons[index] = Neuron.new(0)
 		end
-		
 	end
-
 end
