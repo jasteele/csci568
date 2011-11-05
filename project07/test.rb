@@ -1,4 +1,6 @@
 load 'network.rb'
-n = Network.new
-n.feed_forward
-# should print output
+# create network
+ann = Network.new
+# run network
+ann.feed_forward
+puts "Run complete"

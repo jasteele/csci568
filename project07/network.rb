@@ -23,7 +23,7 @@ class Network
 		connect_layers(@layers[1],@layers[2])
 	end
 
-	# create arrows between neurons
+	# create arrows between neurons across layers
 	def connect_layers(source, destination)
 		source.neurons.each do |src_n|
 			destination.neurons.each do |dest_n|
@@ -34,6 +34,16 @@ class Network
 
 	# run ANN
 	def feed_forward
-
+		@layers.each do |layer|
+			layer.neurons.each do |neuron|
+				neuron.arrows.each do |arrow|
+					arrow.destination.value += neuron.value * arrow.weight
+				end
+			end
+		end
+		puts "Outputs - "
+		puts @layers[2].neurons[0].value
+		puts @layers[2].neurons[1].value
+		puts @layers[2].neurons[2].value
 	end
 end
