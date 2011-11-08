@@ -62,8 +62,6 @@ class Network
 		puts @layers[2].neurons[0].value
 		puts @layers[2].neurons[1].value
 		puts @layers[2].neurons[2].value
-		# train
-		train()
 	end
 
 	def train
@@ -71,7 +69,7 @@ class Network
 		output[0] = @layers[2].neurons[0].value
 		output[1] = @layers[2].neurons[1].value
 		output[2] = @layers[2].neurons[2].value
-		while ((@expected_output[0] - output[0]).abs > 0.01 || (@expected_output[1] - output[1]).abs || 0.01 && (@expected_output[2] - output[2]).abs || 0.01)
+		(0..1000).each do |num|
 			backpropagate
 			reset
 			feed_forward
@@ -114,7 +112,6 @@ class Network
 				arrow.weight = arrow.weight + change
 			end
 		end
-
 	end
 
 	def dtanh(x)
