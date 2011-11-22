@@ -1,0 +1,160 @@
+=== Run information ===
+
+Scheme:       weka.associations.Apriori -N 100 -T 0 -C 0.9 -D 0.05 -U 1.0 -M 0.1 -S -1.0 -A -c 1
+Relation:     mushroom.data
+Instances:    8124
+Attributes:   23
+              classes
+              Cap-shape
+              Cap-surface
+              Cap-color
+              bruises?
+              odor
+              Gill-attachment
+              Gill-spaccing
+              Gill-size
+              Gill-color
+              Stalk-shape
+              Stalk-root
+              Stalk-surface-above-ring
+              Stalk-surface-below-ring
+              Stalk-color-above-ring
+              Stalk-color-below-ring
+              Viel-type
+              Viel-color
+              Ring-number
+              Ring-type
+              Spore-print-color
+              population
+              habitat
+=== Associator model (full training set) ===
+
+
+Apriori
+=======
+
+Minimum support: 0.3 (2437 instances)
+Minimum metric <confidence>: 0.9
+Number of cycles performed: 14
+
+Generated sets of large itemsets:
+
+Size of set of large itemsets L(1): 21
+
+Size of set of large itemsets L(2): 87
+
+Size of set of large itemsets L(3): 198
+
+Size of set of large itemsets L(4): 259
+
+Size of set of large itemsets L(5): 195
+
+Size of set of large itemsets L(6): 83
+
+Size of set of large itemsets L(7): 19
+
+Size of set of large itemsets L(8): 2
+
+Best rules found:
+
+  1. odor=n Gill-size=b Ring-number=o 2688 ==> classes=e 2688    conf:(1)
+  2. odor=n Gill-size=b Viel-type=p Ring-number=o 2688 ==> classes=e 2688    conf:(1)
+  3. odor=n Stalk-shape=t 2496 ==> classes=e 2496    conf:(1)
+  4. odor=n Gill-attachment=f Stalk-shape=t 2496 ==> classes=e 2496    conf:(1)
+  5. odor=n Gill-size=b Stalk-shape=t 2496 ==> classes=e 2496    conf:(1)
+  6. odor=n Stalk-shape=t Viel-type=p 2496 ==> classes=e 2496    conf:(1)
+  7. odor=n Stalk-shape=t Viel-color=w 2496 ==> classes=e 2496    conf:(1)
+  8. odor=n Stalk-shape=t Ring-number=o 2496 ==> classes=e 2496    conf:(1)
+  9. odor=n Gill-attachment=f Gill-size=b Stalk-shape=t 2496 ==> classes=e 2496    conf:(1)
+ 10. odor=n Gill-attachment=f Gill-size=b Ring-number=o 2496 ==> classes=e 2496    conf:(1)
+ 11. odor=n Gill-attachment=f Stalk-shape=t Viel-type=p 2496 ==> classes=e 2496    conf:(1)
+ 12. odor=n Gill-attachment=f Stalk-shape=t Viel-color=w 2496 ==> classes=e 2496    conf:(1)
+ 13. odor=n Gill-attachment=f Stalk-shape=t Ring-number=o 2496 ==> classes=e 2496    conf:(1)
+ 14. odor=n Gill-size=b Stalk-shape=t Viel-type=p 2496 ==> classes=e 2496    conf:(1)
+ 15. odor=n Gill-size=b Stalk-shape=t Viel-color=w 2496 ==> classes=e 2496    conf:(1)
+ 16. odor=n Gill-size=b Stalk-shape=t Ring-number=o 2496 ==> classes=e 2496    conf:(1)
+ 17. odor=n Gill-size=b Viel-color=w Ring-number=o 2496 ==> classes=e 2496    conf:(1)
+ 18. odor=n Stalk-shape=t Viel-type=p Viel-color=w 2496 ==> classes=e 2496    conf:(1)
+ 19. odor=n Stalk-shape=t Viel-type=p Ring-number=o 2496 ==> classes=e 2496    conf:(1)
+ 20. odor=n Stalk-shape=t Viel-color=w Ring-number=o 2496 ==> classes=e 2496    conf:(1)
+ 21. odor=n Gill-attachment=f Gill-size=b Stalk-shape=t Viel-type=p 2496 ==> classes=e 2496    conf:(1)
+ 22. odor=n Gill-attachment=f Gill-size=b Stalk-shape=t Viel-color=w 2496 ==> classes=e 2496    conf:(1)
+ 23. odor=n Gill-attachment=f Gill-size=b Stalk-shape=t Ring-number=o 2496 ==> classes=e 2496    conf:(1)
+ 24. odor=n Gill-attachment=f Gill-size=b Viel-type=p Ring-number=o 2496 ==> classes=e 2496    conf:(1)
+ 25. odor=n Gill-attachment=f Gill-size=b Viel-color=w Ring-number=o 2496 ==> classes=e 2496    conf:(1)
+ 26. odor=n Gill-attachment=f Stalk-shape=t Viel-type=p Viel-color=w 2496 ==> classes=e 2496    conf:(1)
+ 27. odor=n Gill-attachment=f Stalk-shape=t Viel-type=p Ring-number=o 2496 ==> classes=e 2496    conf:(1)
+ 28. odor=n Gill-attachment=f Stalk-shape=t Viel-color=w Ring-number=o 2496 ==> classes=e 2496    conf:(1)
+ 29. odor=n Gill-size=b Stalk-shape=t Viel-type=p Viel-color=w 2496 ==> classes=e 2496    conf:(1)
+ 30. odor=n Gill-size=b Stalk-shape=t Viel-type=p Ring-number=o 2496 ==> classes=e 2496    conf:(1)
+ 31. odor=n Gill-size=b Stalk-shape=t Viel-color=w Ring-number=o 2496 ==> classes=e 2496    conf:(1)
+ 32. odor=n Gill-size=b Viel-type=p Viel-color=w Ring-number=o 2496 ==> classes=e 2496    conf:(1)
+ 33. odor=n Stalk-shape=t Viel-type=p Viel-color=w Ring-number=o 2496 ==> classes=e 2496    conf:(1)
+ 34. odor=n Gill-attachment=f Gill-size=b Stalk-shape=t Viel-type=p Viel-color=w 2496 ==> classes=e 2496    conf:(1)
+ 35. odor=n Gill-attachment=f Gill-size=b Stalk-shape=t Viel-type=p Ring-number=o 2496 ==> classes=e 2496    conf:(1)
+ 36. odor=n Gill-attachment=f Gill-size=b Stalk-shape=t Viel-color=w Ring-number=o 2496 ==> classes=e 2496    conf:(1)
+ 37. odor=n Gill-attachment=f Gill-size=b Viel-type=p Viel-color=w Ring-number=o 2496 ==> classes=e 2496    conf:(1)
+ 38. odor=n Gill-attachment=f Stalk-shape=t Viel-type=p Viel-color=w Ring-number=o 2496 ==> classes=e 2496    conf:(1)
+ 39. odor=n Gill-size=b Stalk-shape=t Viel-type=p Viel-color=w Ring-number=o 2496 ==> classes=e 2496    conf:(1)
+ 40. odor=n Gill-attachment=f Gill-size=b Stalk-shape=t Viel-type=p Viel-color=w Ring-number=o 2496 ==> classes=e 2496    conf:(1)
+ 41. odor=n Stalk-surface-above-ring=s Ring-number=o 2480 ==> classes=e 2472    conf:(1)
+ 42. odor=n Stalk-surface-above-ring=s Viel-type=p Ring-number=o 2480 ==> classes=e 2472    conf:(1)
+ 43. odor=n Viel-color=w Ring-number=o 2728 ==> classes=e 2688    conf:(0.99)
+ 44. odor=n Gill-attachment=f Viel-color=w Ring-number=o 2728 ==> classes=e 2688    conf:(0.99)
+ 45. odor=n Viel-type=p Viel-color=w Ring-number=o 2728 ==> classes=e 2688    conf:(0.99)
+ 46. odor=n Gill-attachment=f Viel-type=p Viel-color=w Ring-number=o 2728 ==> classes=e 2688    conf:(0.99)
+ 47. odor=n Ring-number=o 2928 ==> classes=e 2880    conf:(0.98)
+ 48. odor=n Viel-type=p Ring-number=o 2928 ==> classes=e 2880    conf:(0.98)
+ 49. odor=n Gill-attachment=f Ring-number=o 2736 ==> classes=e 2688    conf:(0.98)
+ 50. odor=n Gill-attachment=f Viel-type=p Ring-number=o 2736 ==> classes=e 2688    conf:(0.98)
+ 51. odor=n Gill-size=b 3288 ==> classes=e 3216    conf:(0.98)
+ 52. odor=n Gill-size=b Viel-type=p 3288 ==> classes=e 3216    conf:(0.98)
+ 53. odor=n Gill-attachment=f Gill-size=b 3096 ==> classes=e 3024    conf:(0.98)
+ 54. odor=n Gill-size=b Viel-color=w 3096 ==> classes=e 3024    conf:(0.98)
+ 55. odor=n Gill-attachment=f Gill-size=b Viel-type=p 3096 ==> classes=e 3024    conf:(0.98)
+ 56. odor=n Gill-attachment=f Gill-size=b Viel-color=w 3096 ==> classes=e 3024    conf:(0.98)
+ 57. odor=n Gill-size=b Viel-type=p Viel-color=w 3096 ==> classes=e 3024    conf:(0.98)
+ 58. odor=n Gill-attachment=f Gill-size=b Viel-type=p Viel-color=w 3096 ==> classes=e 3024    conf:(0.98)
+ 59. odor=n Gill-size=b Stalk-surface-above-ring=s 2744 ==> classes=e 2672    conf:(0.97)
+ 60. odor=n Gill-size=b Stalk-surface-below-ring=s 2744 ==> classes=e 2672    conf:(0.97)
+ 61. odor=n Gill-size=b Stalk-surface-above-ring=s Viel-type=p 2744 ==> classes=e 2672    conf:(0.97)
+ 62. odor=n Gill-size=b Stalk-surface-below-ring=s Viel-type=p 2744 ==> classes=e 2672    conf:(0.97)
+ 63. Gill-size=b Stalk-surface-above-ring=s Stalk-surface-below-ring=s Ring-number=o 2696 ==> classes=e 2624    conf:(0.97)
+ 64. Gill-size=b Stalk-surface-above-ring=s Stalk-surface-below-ring=s Viel-type=p Ring-number=o 2696 ==> classes=e 2624    conf:(0.97)
+ 65. odor=n Stalk-surface-above-ring=s 2920 ==> classes=e 2840    conf:(0.97)
+ 66. odor=n Stalk-surface-above-ring=s Viel-type=p 2920 ==> classes=e 2840    conf:(0.97)
+ 67. odor=n Stalk-surface-below-ring=s 2872 ==> classes=e 2792    conf:(0.97)
+ 68. odor=n Stalk-surface-below-ring=s Viel-type=p 2872 ==> classes=e 2792    conf:(0.97)
+ 69. odor=n Gill-attachment=f Gill-size=b Stalk-surface-above-ring=s 2552 ==> classes=e 2480    conf:(0.97)
+ 70. odor=n Gill-attachment=f Gill-size=b Stalk-surface-below-ring=s 2552 ==> classes=e 2480    conf:(0.97)
+ 71. odor=n Gill-size=b Stalk-surface-above-ring=s Viel-color=w 2552 ==> classes=e 2480    conf:(0.97)
+ 72. odor=n Gill-size=b Stalk-surface-below-ring=s Viel-color=w 2552 ==> classes=e 2480    conf:(0.97)
+ 73. odor=n Gill-attachment=f Gill-size=b Stalk-surface-above-ring=s Viel-type=p 2552 ==> classes=e 2480    conf:(0.97)
+ 74. odor=n Gill-attachment=f Gill-size=b Stalk-surface-above-ring=s Viel-color=w 2552 ==> classes=e 2480    conf:(0.97)
+ 75. odor=n Gill-attachment=f Gill-size=b Stalk-surface-below-ring=s Viel-type=p 2552 ==> classes=e 2480    conf:(0.97)
+ 76. odor=n Gill-attachment=f Gill-size=b Stalk-surface-below-ring=s Viel-color=w 2552 ==> classes=e 2480    conf:(0.97)
+ 77. odor=n Gill-size=b Stalk-surface-above-ring=s Viel-type=p Viel-color=w 2552 ==> classes=e 2480    conf:(0.97)
+ 78. odor=n Gill-size=b Stalk-surface-below-ring=s Viel-type=p Viel-color=w 2552 ==> classes=e 2480    conf:(0.97)
+ 79. odor=n Gill-attachment=f Gill-size=b Stalk-surface-above-ring=s Viel-type=p Viel-color=w 2552 ==> classes=e 2480    conf:(0.97)
+ 80. odor=n Gill-attachment=f Gill-size=b Stalk-surface-below-ring=s Viel-type=p Viel-color=w 2552 ==> classes=e 2480    conf:(0.97)
+ 81. bruises?=f Gill-attachment=f Gill-spaccing=c population=v 2528 ==> classes=p 2456    conf:(0.97)
+ 82. bruises?=f Gill-spaccing=c Viel-color=w population=v 2528 ==> classes=p 2456    conf:(0.97)
+ 83. bruises?=f Gill-attachment=f Gill-spaccing=c Viel-type=p population=v 2528 ==> classes=p 2456    conf:(0.97)
+ 84. bruises?=f Gill-attachment=f Gill-spaccing=c Viel-color=w population=v 2528 ==> classes=p 2456    conf:(0.97)
+ 85. bruises?=f Gill-attachment=f Gill-spaccing=c Ring-number=o population=v 2528 ==> classes=p 2456    conf:(0.97)
+ 86. bruises?=f Gill-spaccing=c Viel-type=p Viel-color=w population=v 2528 ==> classes=p 2456    conf:(0.97)
+ 87. bruises?=f Gill-spaccing=c Viel-color=w Ring-number=o population=v 2528 ==> classes=p 2456    conf:(0.97)
+ 88. bruises?=f Gill-attachment=f Gill-spaccing=c Viel-type=p Viel-color=w population=v 2528 ==> classes=p 2456    conf:(0.97)
+ 89. bruises?=f Gill-attachment=f Gill-spaccing=c Viel-type=p Ring-number=o population=v 2528 ==> classes=p 2456    conf:(0.97)
+ 90. bruises?=f Gill-attachment=f Gill-spaccing=c Viel-color=w Ring-number=o population=v 2528 ==> classes=p 2456    conf:(0.97)
+ 91. bruises?=f Gill-spaccing=c Viel-type=p Viel-color=w Ring-number=o population=v 2528 ==> classes=p 2456    conf:(0.97)
+ 92. bruises?=f Gill-attachment=f Gill-spaccing=c Viel-type=p Viel-color=w Ring-number=o population=v 2528 ==> classes=p 2456    conf:(0.97)
+ 93. odor=n Gill-attachment=f Stalk-surface-above-ring=s 2728 ==> classes=e 2648    conf:(0.97)
+ 94. odor=n Stalk-surface-above-ring=s Viel-color=w 2728 ==> classes=e 2648    conf:(0.97)
+ 95. odor=n Gill-attachment=f Stalk-surface-above-ring=s Viel-type=p 2728 ==> classes=e 2648    conf:(0.97)
+ 96. odor=n Gill-attachment=f Stalk-surface-above-ring=s Viel-color=w 2728 ==> classes=e 2648    conf:(0.97)
+ 97. odor=n Stalk-surface-above-ring=s Viel-type=p Viel-color=w 2728 ==> classes=e 2648    conf:(0.97)
+ 98. odor=n Gill-attachment=f Stalk-surface-above-ring=s Viel-type=p Viel-color=w 2728 ==> classes=e 2648    conf:(0.97)
+ 99. odor=n Gill-attachment=f Stalk-surface-below-ring=s 2680 ==> classes=e 2600    conf:(0.97)
+100. odor=n Stalk-surface-below-ring=s Viel-color=w 2680 ==> classes=e 2600    conf:(0.97)
+
