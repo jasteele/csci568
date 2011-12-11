@@ -9,6 +9,40 @@
 </head>
 <body>
 <div class="container">
+<h1>Similarity Metrics</h1>
+<h3>Introduction</h3>
+    <p>Similarity metrics provide a way for making a numerical measurement of how similar two data objects are. This is useful in data mining because similarity metrics are used in many data mining algorithms. For example, the K-Means clustering algorithms use similarity metrics internally to determine the closest objects to a cluster. Similarity metrics are also used in classification and anomaly detection. Below are several similarity metrics, their descriptions, and an implementation in Ruby by me (when available).</p>
+
+<h3>Euclidean Distance</h3>
+    <p>Euclidean distance of two data objects a and b is the length of the line segment connecting the two objects. To calculate it you take each dimension of the objects a and b and subtract one from the other. Then square that result and add it to a sum. Once you have summed up every dimension take the square root of the sum. Euclidean distance works well dense, continuous data sets.</p>
+<img src="images/euclidean.png">
+<p>Figure 1. Euclidean distance in Ruby.</p>
+
+<h3>Simple Matching Coefficient (SMC)</h3>
+
+<p>Simple matching coefficient is a similarity metric that is only for binary values. To calculate the SMC you count the number of times the attributes in a record match and then divide that number by the total number of attributes in the objects. SMC is not useful for asymmetric data as it counts the matching zero values which are not important in asymmetric data.</p>
+<img src="images/smc.png">
+<p>Figure 2. SMC in Ruby</p>
+   
+<h3>Jaccard Coefficient</h3>
+    <p>The Jaccard coefficient is used for asymmetric binary attributes. The Jaccard coefficient is calculated like SMC except it does not count matching zero values.</p>
+<img src="images/jaccard.png">
+<p>Figure 3. Jaccard in Ruby</p>
+
+<h3>Extended Jaccard Coefficient (Tanimoto Coefficient)</h3>
+    <p>The Extended Jaccard coefficient or Tanimoto Coefficient is distance metric that is useful for document data. In the case of binary attributes it reduces to the Jaccard Coefficient.</p>
+<img src="images/tanimoto.png">
+<p>Figure 4. Tanimoto Coefficient, image from Wikipedia</p>
+
+<h3>Pearson&#39s Correlation</h3>
+    <p>Pearson&#39s Correlation is a measure of the linear relationship between two data objects. Works with either binary or continuous variables. To calculate Pearson&#39s Correlation for two data objects x and y take the covariance of x and y divided by the standard deviation of x times the standard deviation of y.</p>
+<img src="images/pearson.png">
+<p>Figure 5. Pearson&#39s Correlation</p>
+
+<h3>Cosine similarity</h3>
+    <p>Cosine similarity is the measure of the similarity between two vectors. Cosine similarity is used commonly for document term vectors because it ignores zero to zero matches in vectors. In this way it is very similar to Jaccard however it can handle non-binary data as well. To calculate the Cosine similarity of x and y take x dotted with y divided by the vector length of x times the vector length of y.</p>
+<img src="images/cosine.png">
+<p>Figure 6. Cosine Similarity in Ruby.</p>
 
 </div>
 </body>
