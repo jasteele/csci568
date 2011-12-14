@@ -1,0 +1,27 @@
+<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Anomaly Detection</title>
+	<link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print" />
+	<link rel="stylesheet" href="css/main.css" type="text/css" media="screen" /> 
+</head>
+<body>
+<div class="container">
+<h1>Anomaly Detection</h1>
+<h3>Introduction</h3>
+    <p>Anomaly detection is the process where the objective is to find data objects that are different from the most other objects in a data set. Anomalies are also commonly called outliers. Anomalies can be caused by data from different sources or classes. A common example of this kind of anomaly is credit card fraud. When someone else starts using your card they create anomalous data that is very different from your usual spending habits. Another potential source of anomalies is natural variation in real world entities. An example is an extremely tall person. They are anomalous, but they are not from a different class of data they are just an extreme or unlikely variation. A final source of anomalies is data measurement or collection errors.</p>
+
+<p>The are main issue surrounding anomaly detection is: What defines an anomaly for a specific data set? You have to decide how many attributes need to be anomalous before an object is considered anomalous. Whether to determine anomalies globally or locally for your data set. An extremely tall person appears normal to other extremely tall people. Finally, do you care about the degree to which a point is an anomaly or is it a binary decision.</p>  
+<h3>Statistical Approach</h3>
+    <p>Statistical approaches to anomaly detection refer to creating a probability distribution model of a data set and seeing how likely each object is according to that model. This is commonly done using normal (Gaussian) distributions. Normal distributions can be easily created for univariate and multivariate models. The strength of statistical approaches lies in fact that there are a wide variety of ways to test for anomalies in univariate and multivariate data. Statistical approaches can perform poorly with very high dimensional data.</p>
+<h3>Proximity-Based Approach</h3>
+    <p>Proximity-Based anomaly detection approaches rely on the idea that a data object is an anomaly if it is distant from most points. A common technique in proximity-based approaches is to use the k-nearest neighbors algorithm. An outlier score is applied to each point based on the distance to its k-nearest neighbors. Anomalies then can be declared to be anything with a distance greater than 10 to their nearest neighbor as an example. The distance used is dependent on the data set being used. This approach is simple but can be too expensive for large data sets as every data point’s distance is measured with relation to every others. Data sets with varying density can also cause this method problems.</p>
+<h3>Density-Based Approach</h3>
+    <p>Density-Based approaches assume that objects in low density areas are anomalies. Density is highly similar to proximity and can also use k-nearest neighbors to detect anomalies. Another density method is to use DBSCAN to find anomalies. Anomalies are any points that DBSCAN classifies as noise points. That means that any point without the minimum number of points within the distance epsilon from itself. The difficulty in using density based approaches lies in choosing the minimum points and epsilon correctly. Too small and it will find too many anomalies; too large and it my not have any anomalies. Like proximity approaches they are also very expensive to run for high dimensional data.</p>
+<h3>Clustering-Based Approach</h3>
+    <p>Cluster based approaches use the idea that if something does not strongly belong to a cluster than it is an anomaly. One technique is to throw out small clusters that are distant from other clusters. The most common technique is too measure the extent to which an object belongs to a cluster and if it is below a threshold declare it an anomaly. An example is using K-Means to cluster your data then anything with a SSE greater than your threshold would be classified as an anomaly. The strength of clustering techniques is that they can be near linear in complexity. Also you can find clusters and outlier at the same time. The weakness of this technique is in the user having to choose the number of clusters. </p>
+</div>
+</body>
+</html>
