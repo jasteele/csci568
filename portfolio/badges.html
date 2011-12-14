@@ -1,0 +1,31 @@
+<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>The Badges Problem</title>
+	<link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print" />
+	<link rel="stylesheet" href="css/main.css" type="text/css" media="screen" /> 
+</head>
+<body>
+<div class="container">
+</div>
+
+<h1>The Badges Problem</h1>
+<p>To begin trying to determine what makes a person a winner or a loser I am just looking at the data and seeing if I notice any patterns. Since that has failed I will start by generating features. Other things of note there are 213 winners(+) and 85 losers(-). The features I am generating currently are: total length of the namenumber of words in name (John Smith = 2, John H Smith = 3) To illustrate the process I will be using I will stop feature generation and run the new data set through a decision tree learner in Knime. </p>
+<img src="images/kbadges.png">
+<p>As you can see I did not find a feature that split the data well at all. All the splits are impure and most of them close to 50/50 mixes. Assuming that I had found the feature/s that fit the data set I would ideally see that the tree had made a single definitive split. In class we learned that it should be about 98% accurate so I will keep creating features until I see a split of close to that accuracy. Creating some more features now:</p>
+<ul>
+	<li>length of the first name</li>
+	<li>length of the last name</li>
+	<li># of vowels</li>
+	<li># of consonants</li>
+	<li>is the first letter a consonant? or the second? or the third? Etc...</li>
+</ul>
+<p>After creating these additional features I stopped and reran it in Knime through the decision tree learner node. It produced the results I was looking for. </p>
+<img src="images/kbadges2.png">
+<p>As you can see the feature that allows the tree to only need one split is col9 which is the &quot;binary&quot; value of 0 for has a consonant as the second letter or 1 if it has a vowel. The purity of the leaf nodes lets you know that the split is about as good as it can get. </p>
+
+<a href="http://mines.humanoriented.com/classes/2011/fall/csci568/project/winners_losers.csv"> Winner and Losers CSV</a>
+</body>
+</html>
